@@ -4,8 +4,21 @@
 	<!-- <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> -->
 	<bean id="triangle" class="seu.edu.cn.link.Triangle" >
-		<!-- <property name="type" value="Triangle setProperity"></property> -->
-		<constructor-arg type="java.lang.String" value="Equilateral"></constructor-arg>
-		<constructor-arg type="int" value="20"></constructor-arg>
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<bean id="pointA" class="seu.edu.cn.link.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointB" class="seu.edu.cn.link.Point">
+		<property name="x" value="10" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointC" class="seu.edu.cn.link.Point">
+		<property name="x" value="0" />
+		<property name="y" value="10" />
 	</bean>
 </beans>
