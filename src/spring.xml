@@ -5,20 +5,25 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> -->
 	<bean id="triangle" class="seu.edu.cn.link.Triangle" >
 		<property name="pointA" ref="pointA" />
-		<property name="pointB" ref="pointB" />
-		<property name="pointC" ref="pointC" />
+		<property name="pointB">
+			<bean class="seu.edu.cn.link.Point">
+				<property name="x" value="10" />
+				<property name="y" value="0" />
+			</bean>
+		</property> 
+		<property name="pointC" >
+			<bean id="pointC" class="seu.edu.cn.link.Point">
+				<property name="x" value="0" />
+				<property name="y" value="10" />
+			</bean>
+		</property>
 	</bean>
 	
 	<bean id="pointA" class="seu.edu.cn.link.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-	<bean id="pointB" class="seu.edu.cn.link.Point">
-		<property name="x" value="10" />
-		<property name="y" value="0" />
-	</bean>
-	<bean id="pointC" class="seu.edu.cn.link.Point">
-		<property name="x" value="0" />
-		<property name="y" value="10" />
-	</bean>
+	
+	<alias name="triangle" alias="triangle-alias"/>
+	
 </beans>
