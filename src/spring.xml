@@ -3,7 +3,8 @@
 <beans>
 	<!-- <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> -->
-	<bean id="triangle" class="seu.edu.cn.link.Triangle" autowire="byName">
+	<bean id="triangle" class="seu.edu.cn.link.Triangle" autowire="byName" scope="prototype">
+		<property name="num" value="1" />
 	</bean>
 	
 	<bean id="pointA" class="seu.edu.cn.link.Point">
@@ -20,7 +21,9 @@
 		<property name="x" value="0" />
 		<property name="y" value="10" />
 	</bean>
-	
+
+
 	<alias name="triangle" alias="triangle-alias"/>
+	
 	
 </beans>

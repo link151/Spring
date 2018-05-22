@@ -20,6 +20,11 @@ public class DrawApplication {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		Triangle triangle = (Triangle) context.getBean("triangle-alias");
 		triangle.draw();
+		System.out.println("num:" + triangle.getNum());
+		triangle.setNum(triangle.getNum()+1);
+		triangle = (Triangle) context.getBean("triangle-alias");
+		triangle.draw();
+		System.out.println("num:" + triangle.getNum());
 		
 	}
 
