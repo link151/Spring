@@ -5,7 +5,18 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> -->
 	<bean id="parentTriangle" class="seu.edu.cn.link.Triangle" autowire="byName" >
 		<property name="num" value="1" />
-		<property name="pointA" ref="pointA" />
+		<property name="points">
+		<list>
+			<ref bean="pointA"/>
+		</list>
+		</property>
+	</bean>
+	<bean id="triangle2" class="seu.edu.cn.link.Triangle" autowire="byName" parent="parentTriangle">
+		<property name="points">
+		<list merge="true">
+			<ref bean="pointB"/>
+		</list>
+		</property>
 	</bean>
 	<bean id="triangle" class="seu.edu.cn.link.Triangle" autowire="byName" parent="parentTriangle">
 		<property name="pointB" ref="pointB" />

@@ -1,5 +1,7 @@
 package seu.edu.cn.link;
 
+import java.util.List;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
@@ -11,6 +13,7 @@ public class Triangle implements ApplicationContextAware, BeanNameAware{
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	private List<Point> points;
 	private Integer num;
 	private ApplicationContext context = null; 
 	
@@ -39,8 +42,17 @@ public class Triangle implements ApplicationContextAware, BeanNameAware{
 	public void setNum(Integer num) {
 		this.num = num;
 	}
+	public List<Point> getPoints() {
+		return points;
+	}
+	public void setPoints(List<Point> points) {
+		this.points = points;
+	}
 	public void draw() {
-		
+		for(Point point : points){
+			System.out.println("point: (" + point.getX() + ", " + point.getY() + ")");
+		}
+		System.out.println("====");
 		System.out.println("pointA: (" + getPointA().getX() + ", " + getPointA().getY() + ")");
 		System.out.println("pointB: (" + getPointB().getX() + ", " + getPointB().getY() + ")");
 		System.out.println("pointC: (" + getPointC().getX() + ", " + getPointC().getY() + ")");
