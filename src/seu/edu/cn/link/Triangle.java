@@ -1,12 +1,18 @@
 package seu.edu.cn.link;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
-public class Triangle {
+
+public class Triangle implements ApplicationContextAware, BeanNameAware{
 
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	private Integer num;
+	private ApplicationContext context = null; 
 	
 	public Point getPointA() {
 		return pointA;
@@ -38,5 +44,15 @@ public class Triangle {
 		System.out.println("pointA: (" + getPointA().getX() + ", " + getPointA().getY() + ")");
 		System.out.println("pointB: (" + getPointB().getX() + ", " + getPointB().getY() + ")");
 		System.out.println("pointC: (" + getPointC().getX() + ", " + getPointC().getY() + ")");
+	}
+	
+	@Override
+	public void setApplicationContext(ApplicationContext context)
+			throws BeansException {
+		this.context = context;
+	}
+	@Override
+	public void setBeanName(String beanName) {
+		System.out.println("bean name is :" + beanName);
 	}
 }
