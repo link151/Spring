@@ -39,7 +39,7 @@
 		<property name="y" value="10" />
 	</bean>
 
-
+	<bean class="seu.edu.cn.link.DisplayNameBeanPostProcessor" />
 	<alias name="triangle" alias="triangle-alias"/>
 	
 	
