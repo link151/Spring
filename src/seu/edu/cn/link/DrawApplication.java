@@ -3,6 +3,7 @@ package seu.edu.cn.link;
 import java.io.File;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawApplication {
@@ -17,7 +18,8 @@ public class DrawApplication {
 //		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
 //		Triangle triangle = (Triangle) factory.getBean("triangle");
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		context.registerShutdownHook();
 		Triangle triangle = (Triangle) context.getBean("triangle2");
 		triangle.draw();
 		
