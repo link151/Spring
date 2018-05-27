@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContextAware;
 
 
 public class Triangle implements ApplicationContextAware, BeanNameAware, 
-	InitializingBean, DisposableBean{
+	InitializingBean, DisposableBean, Shape{
 
 	private Point pointA;
 	private Point pointB;
@@ -52,6 +52,7 @@ public class Triangle implements ApplicationContextAware, BeanNameAware,
 		this.points = points;
 	}
 	public void draw() {
+		System.out.println("Draw Circle");
 		for(Point point : points){
 			System.out.println("point: (" + point.getX() + ", " + point.getY() + ")");
 		}

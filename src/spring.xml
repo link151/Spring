@@ -23,7 +23,6 @@
 		<property name="pointC" ref="pointC" />
 	</bean>
 	
-	
 	<bean id="pointA" class="seu.edu.cn.link.Point">
 		<property name="x" value="${pointA.pointX}" />
 		<property name="y" value="${pointA.pointY}" />
@@ -39,12 +38,14 @@
 		<property name="y" value="10" />
 	</bean>
 
+	<bean id="shape" class="seu.edu.cn.link.Circle">
+		<property name="center" ref="pointA" />
+	</bean>
 	<bean class="seu.edu.cn.link.DisplayNameBeanPostProcessor" />
 	<alias name="triangle" alias="triangle-alias"/>
 	<bean class="seu.edu.cn.link.MyBeanFactoryPostProcessor" />
 	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
 		<property name="locations" value="point.properties" />
 	</bean>
-	
 	
 </beans>
