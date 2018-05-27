@@ -1,5 +1,6 @@
 package seu.edu.cn.link;
 
+
 public class Point {
 
 	private int x;

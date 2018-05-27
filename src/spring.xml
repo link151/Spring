@@ -4,6 +4,7 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
 	<context:annotation-config/>
+	<context:component-scan base-package="seu.edu.cn.link" />
 
 	<bean id="parentTriangle" class="seu.edu.cn.link.Triangle" autowire="byName">
 		<property name="num" value="1" />
@@ -13,13 +14,13 @@
 		</list>
 		</property>
 	</bean>
-	<bean id="triangle2" class="seu.edu.cn.link.Triangle" autowire="byName" parent="parentTriangle" >
+<!-- 	<bean id="triangle2" class="seu.edu.cn.link.Triangle" autowire="byName" parent="parentTriangle" >
 		<property name="points">
 		<list merge="true">
 			<ref bean="pointB"/>
 		</list>
 		</property>
-	</bean>
+	</bean> -->
 	<bean id="triangle" class="seu.edu.cn.link.Triangle" autowire="byName" parent="parentTriangle">
 		<property name="pointB" ref="pointB" />
 		<property name="pointC" ref="pointC" />
@@ -40,14 +41,11 @@
 		<property name="x" value="0" />
 		<property name="y" value="10" />
 	</bean>
-	<bean id="center" class="seu.edu.cn.link.Point">
+	<!-- <bean id="center" class="seu.edu.cn.link.Point">
 		<property name="x" value="0" />
 		<property name="y" value="10" />
-	</bean>
+	</bean> -->
 
-	<bean id="shape" class="seu.edu.cn.link.Circle">
-		<!-- <property name="center" ref="pointA" /> -->
-	</bean>
 
 	<alias name="triangle" alias="triangle-alias"/>
 	<bean class="seu.edu.cn.link.DisplayNameBeanPostProcessor" />
