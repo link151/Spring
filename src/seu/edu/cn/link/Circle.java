@@ -1,8 +1,8 @@
 package seu.edu.cn.link;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 public class Circle implements Shape{
 	private Point center;
@@ -11,9 +11,7 @@ public class Circle implements Shape{
 		return center;
 	}
 
-//	@Required
-	@Autowired
-	@Qualifier("circleRelated")
+	@Resource(name="pointB")
 	public void setCenter(Point center) {
 		this.center = center;
 	}
@@ -24,5 +22,14 @@ public class Circle implements Shape{
 		System.out.println("center point: (" + center.getX() + ", " + center.getY() + ")");
 	}
 	
+	@PostConstruct
+	public void initCircle() {
+		System.out.println("Init Circle");
+	}
+	
+	@PreDestroy
+	public void destroyCircle() {
+		System.out.println("Destroy Circle");
+	}
 	
 }

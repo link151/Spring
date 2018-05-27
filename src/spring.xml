@@ -40,6 +40,10 @@
 		<property name="x" value="0" />
 		<property name="y" value="10" />
 	</bean>
+	<bean id="center" class="seu.edu.cn.link.Point">
+		<property name="x" value="0" />
+		<property name="y" value="10" />
+	</bean>
 
 	<bean id="shape" class="seu.edu.cn.link.Circle">
 		<!-- <property name="center" ref="pointA" /> -->
@@ -52,6 +56,4 @@
 		<property name="locations" value="point.properties" />
 	</bean>
 	
-	<!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
-	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" /> -->
 </beans>
