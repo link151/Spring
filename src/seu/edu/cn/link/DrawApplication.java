@@ -2,7 +2,6 @@ package seu.edu.cn.link;
 
 import java.io.File;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
