@@ -53,5 +53,13 @@
 	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
 		<property name="locations" value="point.properties" />
 	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>sourceMessage</value>
+			</list>
+		</property>
+	</bean>
+	
 	
 </beans>
