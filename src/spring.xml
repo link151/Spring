@@ -39,7 +39,7 @@
 	</bean>
 
 	<bean id="shape" class="seu.edu.cn.link.Circle">
-		<property name="center" ref="pointA" />
+		<!-- <property name="center" ref="pointA" /> -->
 	</bean>
 	<bean class="seu.edu.cn.link.DisplayNameBeanPostProcessor" />
 	<alias name="triangle" alias="triangle-alias"/>
@@ -47,5 +47,6 @@
 	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
 		<property name="locations" value="point.properties" />
 	</bean>
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
 	
 </beans>
