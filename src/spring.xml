@@ -25,8 +25,8 @@
 	
 	
 	<bean id="pointA" class="seu.edu.cn.link.Point">
-		<property name="x" value="0" />
-		<property name="y" value="0" />
+		<property name="x" value="${pointA.pointX}" />
+		<property name="y" value="${pointA.pointY}" />
 	</bean>
 
 	<bean id="pointB" class="seu.edu.cn.link.Point">
@@ -41,6 +41,10 @@
 
 	<bean class="seu.edu.cn.link.DisplayNameBeanPostProcessor" />
 	<alias name="triangle" alias="triangle-alias"/>
+	<bean class="seu.edu.cn.link.MyBeanFactoryPostProcessor" />
+	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name="locations" value="point.properties" />
+	</bean>
 	
 	
 </beans>
